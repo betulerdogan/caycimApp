@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "650122312190",
+    "firebase_url": "https://caycimapp.firebaseio.com",
+    "project_id": "caycimapp",
+    "storage_bucket": "caycimapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:650122312190:android:0b3a5f054e8284be",
+        "android_client_info": {
+          "package_name": "com.betulerdogan.caycimapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "650122312190-1vhavhtdrc95d496fr0n6oopehrmhqve.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.betulerdogan.caycimapp",
+            "certificate_hash": "d3cb65c8101bad418e0e6071ad29ef3950fbb43f"
+          }
+        },
+        {
+          "client_id": "650122312190-r223di43dg13dfu3b984jn36hupua5k0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVDmd1xJeNCzsYZT8gVMJ0Q5ASRkt8Wes"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "650122312190-r223di43dg13dfu3b984jn36hupua5k0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
