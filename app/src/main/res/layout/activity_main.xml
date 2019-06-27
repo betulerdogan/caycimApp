@@ -14,8 +14,8 @@
         style="@style/Widget.AppCompat.Button"
         android:layout_width="230dp"
         android:layout_height="0dp"
-        android:layout_marginTop="460dp"
-        android:layout_marginBottom="21dp"
+        android:layout_marginTop="485dp"
+        android:layout_marginBottom="12dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/btnSignIn"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,8 +26,8 @@
         android:id="@+id/btnSignIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="31dp"
-        android:layout_marginBottom="54dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="55dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btnSignUp"
@@ -36,17 +36,21 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="479dp"
         android:src="@drawable/firstkayit"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnSignUp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="55dp"
         android:src="@drawable/oturumacmetni"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btnSignIn"
-        app:layout_constraintTop_toTopOf="@+id/btnSignIn" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 </android.support.constraint.ConstraintLayout>
