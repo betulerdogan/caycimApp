@@ -2,6 +2,7 @@ package com.betulerdogan.caycimapp;
 
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.betulerdogan.caycimapp.Common.Common;
 import com.betulerdogan.caycimapp.Model.User;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -51,7 +53,11 @@ public class LoginActivity extends AppCompatActivity {
                             mDialog.dismiss();
                             User user = dataSnapshot.child(edtPhone.getText().toString()).getValue(User.class);
                             if (user.getPassword().equals(edtPassword.getText().toString())) {
-                                Toast.makeText(LoginActivity.this, "Giriş Başarılı", Toast.LENGTH_SHORT).show();
+                                Intent homeIntent = new Intent(LoginActivity.this,Home.class);
+                                Common.currentUser = user;
+                                startActivity(homeIntent);
+                                finish();
+
                             } else {
                                 Toast.makeText(LoginActivity.this, "Parolanız Yanlış.", Toast.LENGTH_SHORT).show();
                             }
