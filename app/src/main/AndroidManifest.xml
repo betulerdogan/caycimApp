@@ -29,13 +29,11 @@
             android:name=".SignActivity"
             android:label="@string/title_activity_sign" />
         <activity
-            android:name=".MainpageActivity"
-            android:label="@string/title_activity_mainpage"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".Home"
             android:label="@string/title_activity_home"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".CategoryDetail" />
+        <activity android:name=".Cart"></activity>
     </application>
 
 </manifest>

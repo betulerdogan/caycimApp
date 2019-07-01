@@ -1,6 +1,8 @@
 package com.betulerdogan.caycimapp;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -41,6 +43,7 @@ public class Home extends AppCompatActivity
 
     RecyclerView recycler_menu;
     RecyclerView.LayoutManager layoutManager;
+    FirebaseRecyclerAdapter<Category,MenuViewHolder> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,8 +63,8 @@ public class Home extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent cartIntent = new Intent(Home.this,Cart.class);
+                startActivity(cartIntent);
             }
         });
 
@@ -93,19 +96,25 @@ public class Home extends AppCompatActivity
                 .setQuery(category,Category.class)
                 .build();
 
-        FirebaseRecyclerAdapter<Category,MenuViewHolder> adapter=new FirebaseRecyclerAdapter<Category, MenuViewHolder>(options) {
+        adapter=new FirebaseRecyclerAdapter<Category, MenuViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull MenuViewHolder viewHolder, int position, @NonNull Category model) {
 
                 viewHolder.txtMenuName.setText(model.getName());
-                /*Picasso.get(Home.this).load(model.getImage())
-                        .into(viewHolder.imageView);*/
+                //Picasso.get().load(model.getImage())
+                 //       .into(viewHolder.imageView);
+
+
 
                 final Category clickItem=model;
                 viewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
-                        Toast.makeText(Home.this, ""+clickItem.getName(), Toast.LENGTH_SHORT).show();
+                        //Home activityde tıklama anında category detaile geçiş
+
+                        Intent categoryDetail = new Intent(Home.this,CategoryDetail.class);
+                        categoryDetail.putExtra("CategoryId",adapter.getRef(position).getKey());
+                        startActivity(categoryDetail);
                     }
                 });
             }

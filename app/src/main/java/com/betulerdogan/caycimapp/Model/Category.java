@@ -4,13 +4,17 @@ public class Category {
 
     private String Name;
     private String Image;
+    private String Price;
+
+
 
     public Category() {
     }
 
-    public Category(String name, String image) {
+    public Category(String name, String image, String Price) {
         Name = name;
         Image = image;
+        this.Price = Price;
     }
 
     public String getName() {
@@ -27,5 +31,13 @@ public class Category {
 
     public void setImage(String image) {
         Image = image;
+    }
+
+    public String getPrice() {
+        return Price;
+    }
+
+    public void setPrice(String Price) {
+        this.Price = Price;
     }
 }
